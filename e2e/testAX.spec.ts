@@ -18,3 +18,4 @@ test('testAX', async ({ page }) => {
   await page.getByRole('button', { name: 'Przechodzę do koszyka' }).click();
   await page.getByRole('button', { name: 'Zamów' }).click();
 });
+//dodać ceny po drodze z AXów
