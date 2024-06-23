@@ -26,10 +26,14 @@ test('testPriceHostingPage', async ({ page }) => {
     await page.goto('https://home.pl/');
     await page.getByRole('button', { name: 'ODRZUĆ WSZYSTKIE' }).click();
     await page.getByRole('link', { name: 'Hosting WWW' }).click();
-    await expect(page.getByTestId('product-box-price-price')).toContainText('49,08 zł');
-    await expect(page.getByTestId('product-box-price-price')).toContainText('61,38 zł');
-    await expect(page.getByTestId('product-box-price-price')).toContainText('184,50 zł');
-    await expect(page.getByTestId('product-box-price-price')).toContainText('492,00 zł');
+    await expect(page.locator('#szczegoly')).toContainText('49,08 zł');
+    await expect(page.locator('#szczegoly')).toContainText('61,38 zł');
+    await expect(page.locator('#szczegoly')).toContainText('184,50 zł');
+    await expect(page.locator('#szczegoly')).toContainText('492,00 zł');
+    // await expect(page.getByTestId('product-box-price-price')).toContainText('49,08 zł');
+    // await expect(page.getByTestId('product-box-price-price')).toContainText('61,38 zł');
+    // await expect(page.getByTestId('product-box-price-price')).toContainText('184,50 zł');
+    // await expect(page.getByTestId('product-box-price-price')).toContainText('492,00 zł');
     // await expect(page.locator('#szczegoly')).toContainText('49,08 zł');
   });
 
