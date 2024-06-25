@@ -19,8 +19,8 @@ test('testCheckAdServerCookieIfNotAllowed', async ({ page }) => {
 }); 
 
 
-// testCheckAnalytic zostawiam chociaż nie działa prawidłowo - wyświetla timeout - gdy na home.pl odrzucimy pliki 
-// cookie powinien i tak ładować się skrypt Analyticsa (jest on zaliczany do katrgorii "Niezbędne" w płachcie cookie), 
+// testCheckAnalytic zostawiam chociaż nie działa prawidłowo - wywala timeout - gdy na home.pl odrzucimy pliki 
+// cookie powinien i tak ładować się skrypt Analyticsa (jest on zaliczany do kategorii "Niezbędne" w płachcie cookie), 
 // test nie przechodzi niezależnie od tego czy pliki cookie odrzucimy czy zaakceptujemy
 
 test('testCheckAnalytics', async ({ page }) => {

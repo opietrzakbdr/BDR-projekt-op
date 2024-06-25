@@ -16,20 +16,30 @@ test('testPricesMainPage', async ({ page }) => {
   });
 
 test('testPricePlDomainPage', async ({ page }) => {
+    //given
     await goToHomepl(page, 'ODRZUĆ WSZYSTKIE')
+    //when
     await page.getByRole('link', { name: 'pl-0 6,14 zł / rok Polecamy' }).click();
+    //then
     await expect(page.getByRole('main')).toContainText('6,14 zł');
 });
 
 test('testPriceEuDomainPage', async ({ page }) => {
+    //given
     await goToHomepl(page, 'ODRZUĆ WSZYSTKIE')
+    //when
     await page.getByRole('link', { name: 'eu-2 29,52 zł / rok' }).click();
+    //then
     await expect(page.getByRole('main')).toContainText('29,52 zł');
 });
 
 test('testPriceHostingPage', async ({ page }) => {
+    //given
+    //miałam problem z przejściem na stronę /hosting/ z poziomu menu strony głównej - stąd od razu przejście na LP po URL
     await page.goto('https://home.pl/hosting/');
+    //when
     await page.getByRole('button', { name: 'ODRZUĆ WSZYSTKIE' }).click();
+    //then
     await expect(page.locator('#szczegoly')).toContainText('49,08 zł');
     await expect(page.locator('#szczegoly')).toContainText('61,38 zł');
     await expect(page.locator('#szczegoly')).toContainText('184,50 zł');
