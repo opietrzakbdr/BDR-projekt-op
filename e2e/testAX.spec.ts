@@ -8,7 +8,7 @@ async function goToHomepl(page: Page, cookieDeclaration: string) {
   await expect(page.getByRole('link', { name: 'Logo home.pl' })).toBeVisible();
 }
 
-
+//sprawdza czy działa prawidłowo AX - czy dodają się prawidłowo produkty "z haka" do koszyka do domeny
 test('testAX', async ({ page }) => {
   test.setTimeout(120000);
   //given
