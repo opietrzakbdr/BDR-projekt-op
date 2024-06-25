@@ -15,6 +15,9 @@ test('testAX', async ({ page }) => {
   await goToHomepl(page, 'ODRZUĆ WSZYSTKIE')
   await page.getByRole('textbox', { name: 'Wyszukaj domenę lub produkt' }).fill(fakerPL.lorem.lines(1));
   await page.getByRole('button', { name: 'Wyszukaj' }).click();
+  //przy "dodaj do koszyka" może się wywalić - czasami pojawiają się jeszcze dodatkowe przyciski "dodaj do koszyka" i nie wie
+  // który wybrać, ccsy mamy takie same też w przypadku tych przycisków a po xpath nie działa lokalizowanie
+  // w przypadku naszej strony
   await page.locator('#domain-search-transfer').getByRole('button', { name: 'Dodaj do koszyka' }).click();
   await page.locator('.sc-1enuft9-0').click();
   await page.locator('#domain-search-transfer').getByRole('button', { name: 'Idź do kasy' }).click();
